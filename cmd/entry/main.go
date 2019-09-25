@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
-	"github.com/liguozhong/prometheus-arms-aliyun-go-demo/pkg"
+	gs "github.com/liguozhong/prometheus-arms-aliyun-go-demo/pkg"
 	"os"
 
 	_ "net/http/pprof"
@@ -29,7 +29,7 @@ func main() {
 
 //部署在用户的k8s内，抓取exporter内的数据，写入SLS
 func runServer(logger log.Logger) {
-	server := pkg.NewServer(8077)
+	server := gs.NewServer(8077)
 	err := server.Run()
 	if err != nil {
 		logger.Log("server.Run() err:", err)
