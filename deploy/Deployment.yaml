@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: promethues-arms-aliyun-go-demo
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: promethues-arms-aliyun-go-demo
+    spec:
+      containers:
+      - name: promethues-arms-aliyun-go-demo
+        imagePullPolicy: Always
+        image: registry.cn-hangzhou.aliyuncs.com/fuling/prometheus-arms-aliyun-go-demo-amd64:dev-v0.1
+        ports:
+        - containerPort: 8077
+          name: arms-go-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: promethues-arms-aliyun-go-demo
+  name: promethues-arms-aliyun-go-demo
+spec:
+  ports:
+  - name: arms-go-demo
+    port: 8077
+    protocol: TCP
+    targetPort: 8077
+  type: NodePort
+  selector:
+    app: promethues-arms-aliyun-go-demo

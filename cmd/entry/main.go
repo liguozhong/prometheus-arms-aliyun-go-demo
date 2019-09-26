@@ -20,7 +20,7 @@ const (
 )
 
 func main() {
-	fmt.Println("开始启动 prometheus-arms-aliyun-go-demo -v0")
+	fmt.Println("开始启动 promethues-arms-aliyun-go-demo -v -dev-0.1")
 	logger := initLogger()
 	runServer(logger)
 	fmt.Println("结束启动 prometheus-arms-aliyun-go-demo module", )

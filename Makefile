@@ -40,7 +40,6 @@ $(OUT_DIR)/%/entry: $(src_deps)
 
 build-local-image-v2: $(OUT_DIR)/$(ARCH)/entry
 	echo "`git rev-parse --abbrev-ref HEAD`_`git rev-parse --short HEAD`_`date "+%Y%m%d%H%M%S"`" > version
-	cp version $(TEMP_DIR)
 	cp deploy/Dockerfile $(TEMP_DIR)
 	cp  $(OUT_DIR)/$(ARCH)/entry $(TEMP_DIR)
 	cd $(TEMP_DIR) && sed -i "" "s/BASEIMAGE/$(BASEIMAGE)/g" Dockerfile

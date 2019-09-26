@@ -1,7 +1,6 @@
 FROM BASEIMAGE
 
-COPY version /
-COPY ../cmd/entry /
+COPY entry /
 
 RUN ls -hl /
 
