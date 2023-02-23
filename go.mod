@@ -10,5 +10,5 @@ require (
 	go.opentelemetry.io/otel/exporters/metric/prometheus v0.15.0
 	go.opentelemetry.io/otel/exporters/otlp v0.15.0
 	go.opentelemetry.io/otel/sdk v0.15.0
-	golang.org/x/text v0.3.3 // indirect
+	golang.org/x/text v0.3.8 // indirect
 )
